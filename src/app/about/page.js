@@ -47,31 +47,27 @@ const AboutPage = () => {
           </div>
         </section>
 
-        {/* 2. Our Mission Section (Purple Background) */}
+        {/* 2. Our Mission Section */}
         <section className="bg-[#43234F] px-6 pt-16 text-white md:pt-20 lg:px-20 lg:pt-24">
-          {/* Changed 'py-16' to 'pt-16' to remove bottom padding */}
           <div className="mx-auto max-w-7xl">
             <div className="grid items-end gap-12 lg:grid-cols-2">
-              {/* Image Container */}
               <div className="order-2 flex justify-center lg:order-1">
                 <div className="relative h-[350px] w-full max-w-md overflow-hidden rounded-t-2xl md:h-[450px] lg:h-[500px]">
-                  {/* rounded-t-2xl keeps the top corners rounded but bottom flat to stick to the floor */}
-                  <Image 
-                    src="/mission-staff.webp" 
-                    alt="Mission" 
-                    fill 
-                    className="object-cover object-bottom" 
+                  <Image
+                    src="/mission-staff.webp"
+                    alt="Mission"
+                    fill
+                    className="object-cover object-bottom"
                   />
                 </div>
               </div>
 
-              {/* Text Container */}
               <div className="order-1 pb-16 lg:order-2 lg:pb-32">
-                {/* Added 'pb' here to keep text centered while the image sits at the bottom */}
                 <p className="mb-2 text-sm font-medium text-rose-300">Our Mission</p>
                 <h2 className="text-3xl font-bold md:text-4xl lg:text-5xl">Strengthening the Health Care Systems</h2>
                 <div className="mt-6 space-y-4 text-sm leading-relaxed text-slate-200 md:text-base">
-                  <p>Byte Health's mission is to strengthen communities by helping build health systems that are accessible, coordinated, and compassionate.</p>
+                  {/* FIXED LINE BELOW: Health's became Health&apos;s */}
+                  <p>Byte Health&apos;s mission is to strengthen communities by helping build health systems that are accessible, coordinated, and compassionate.</p>
                   <p>We partner with organizations that share our commitment to improving care delivery and ensuring that every person can live a healthier, more supported life.</p>
                   <p>Byte Health strengthens communities by building accessible, coordinated, and compassionate health systems.</p>
                 </div>

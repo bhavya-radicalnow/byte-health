@@ -11,67 +11,66 @@ export default function OurStorySection() {
   return (
     <section className="bg-[#4A1E3F] py-20">
       <div className="mx-auto max-w-7xl px-4 md:px-6">
-      <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-12">
 
           {/* Left: Video Image */}
           <div className="relative mx-auto w-full max-w-sm md:max-w-md xl:max-w-lg">
-            <div className="overflow-hidden rounded-2xl">
+            <div className="overflow-hidden rounded-2xl aspect-[520/420] relative">
               <Image
                 src="/our-story.webp"
                 alt="Doctor consultation"
-                width={520}
-                height={420}
-                className="h-full w-full object-cover"
+                fill
+                className="object-cover"
               />
             </div>
 
             {/* Play Button (IMAGE) */}
             <button
               aria-label="Play video"
-              className="absolute left-1/2 top-1/2 flex h-64 w-64 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full transition hover:scale-105"
+              className="absolute left-1/2 top-1/2 flex h-16 w-16 md:h-20 md:w-20 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full transition hover:scale-110 active:scale-95 z-20"
             >
               <Image
                 src="/play.png"
                 alt="Play video"
-                width={64}
-                height={64}
+                width={80}
+                height={80}
+                className="w-full h-full"
               />
             </button>
           </div>
 
           {/* Right: Content */}
           <div className="text-white">
-            <p className="mb-3 text-sm font-bold uppercase tracking-wide text-white">
+            <p className="mb-3 text-sm font-bold uppercase tracking-widest text-white/70">
               Our Story
             </p>
 
-            <p className="text-xl font-bold leading-tight sm:text-4xl">
+            <h2 className="text-3xl font-bold leading-tight sm:text-4xl">
               See How We Are{" "}
-            </p>
-
-            <p className="text-3xl font-bold leading-tight sm:text-4xl text-[#EB5158]">
-              Changing Lives
-            </p>
-            <p className="mt-5 max-w-md text-base text-white/80">
-              Watch our explainer video to understand how we're making
+              <span className="block text-[#EB5158]">Changing Lives</span>
+            </h2>
+            
+            {/* FIXED LINE BELOW: we're became we&apos;re */}
+            <p className="mt-5 max-w-md text-base text-white/80 leading-relaxed">
+              Watch our explainer video to understand how we&apos;re making
               quality healthcare accessible and affordable for every worker
               and their family.
             </p>
 
             <ul className="mt-8 space-y-4">
               {points.map((text) => (
-                <li key={text} className="flex items-center gap-3">
-                  
-                  {/* Tick Icon (IMAGE) */}
-                  <Image
-                    src="/tick-circle.png"
-                    alt="Check"
-                    width={24}
-                    height={24}
-                    className="shrink-0"
-                  />
+                <li key={text} className="flex items-start gap-4">
+                  {/* Tick Icon */}
+                  <div className="mt-0.5 shrink-0">
+                    <Image
+                      src="/tick-circle.png"
+                      alt="Check"
+                      width={22}
+                      height={22}
+                    />
+                  </div>
 
-                  <span className="text-sm text-white/90">
+                  <span className="text-base text-white/90">
                     {text}
                   </span>
                 </li>
