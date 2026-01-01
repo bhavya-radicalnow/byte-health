@@ -23,20 +23,6 @@ export default function OurStorySection() {
                 className="object-cover"
               />
             </div>
-
-            {/* Play Button (IMAGE) */}
-            <button
-              aria-label="Play video"
-              className="absolute left-1/2 top-1/2 flex h-16 w-16 md:h-20 md:w-20 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full transition hover:scale-110 active:scale-95 z-20"
-            >
-              <Image
-                src="/play.png"
-                alt="Play video"
-                width={80}
-                height={80}
-                className="w-full h-full"
-              />
-            </button>
           </div>
 
           {/* Right: Content */}

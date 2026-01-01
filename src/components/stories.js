@@ -67,13 +67,14 @@ export default function StoriesOfHopeSection() {
               </motion.p>
             </div>
 
-            {/* IMAGE - Placed in flow to ensure alignment */}
+            {/* IMAGE - HIDDEN on Mobile/Tablet, Visible on Desktop (xl) */}
             <motion.div 
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.3 }}
-              className="mt-12 lg:mt-auto relative"
+              // Added 'hidden xl:block' to hide on phones/iPads and show on desktop
+              className="mt-12 lg:mt-auto relative hidden xl:block"
             >
               <Image
                 src="/family.webp"
@@ -85,7 +86,7 @@ export default function StoriesOfHopeSection() {
                   max-w-[480px] 
                   mx-auto 
                   lg:mx-0 
-                  lg:w-[110%] /* Slight overhang for dynamic look */
+                  lg:w-[110%]
                   h-auto 
                   object-contain
                 "

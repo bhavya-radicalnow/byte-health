@@ -6,18 +6,18 @@ export const heroSlides = [
     ],
     description:
       "Comprehensive health cover that protect what matters its simple to understand, easy to manage",
-    image: "/hero-person-one.webp",
+    image: "/hero_one.png",
     ctaPrimary: "How It Works →",
     ctaSecondary: "Watch Video",
   },
   {
     titleParts: [
-      { text: "Health Plan", highlight: true },
-      { text: "That works for Bharat", highlight: false },
+      { text: "Health Plan That works", highlight: false },
+      { text: "Works for Bharat", highlight: true },
     ],
     description:
       "Comprehensive health cover that protect what matters its simple to understand, easy to manage",
-    image: "/hero-person-two.webp",
+    image: "/hero_two.png",
     ctaPrimary: "How It Works →",
     ctaSecondary: "Watch Video",
   },
@@ -28,7 +28,7 @@ export const heroSlides = [
     ],
     description:
       "Comprehensive health cover that protect what matters its simple to understand, easy to manage",
-    image: "/hero-person-three.webp",
+    image: "/hero_three.png",
     ctaPrimary: "How It Works →",
     ctaSecondary: "Watch Video",
   },

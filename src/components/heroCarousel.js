@@ -2,14 +2,15 @@
 
 import Image from "next/image";
 import useEmblaCarousel from "embla-carousel-react";
+import Fade from "embla-carousel-fade";
 import { useEffect } from "react";
 import { heroSlides } from "./heroSlides";
 
-export function HeroCarousel({
-  onChange,
-  variant = "desktop",
-}) {
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
+export function HeroCarousel({ onChange }) {
+  const [emblaRef, emblaApi] = useEmblaCarousel(
+    { loop: true, duration: 30 },
+    [Fade()]
+  );
 
   useEffect(() => {
     if (!emblaApi || !onChange) return;
@@ -18,7 +19,7 @@ export function HeroCarousel({
     emblaApi.on("select", update);
     update();
 
-    const auto = setInterval(() => emblaApi.scrollNext(), 4500);
+    const auto = setInterval(() => emblaApi.scrollNext(), 5000);
     return () => clearInterval(auto);
   }, [emblaApi, onChange]);
 
@@ -30,24 +31,15 @@ export function HeroCarousel({
             key={i}
             className="relative flex-[0_0_100%] flex items-end justify-center"
           >
-            {variant === "card" ? (
+            <div className="relative h-[360px] w-[320px] md:h-[480px] md:w-[420px] lg:h-[560px] lg:w-[520px]">
               <Image
                 src={slide.image}
                 alt={slide.highlight}
                 fill
                 priority={i === 0}
-                className="object-cover object-top"
+                className="object-contain object-bottom"
               />
-            ) : (
-              <Image
-                src={slide.image}
-                alt={slide.highlight}
-                width={520}
-                height={720}
-                priority={i === 0}
-                className="w-auto max-h-[78vh] object-contain"
-              />
-            )}
+            </div>
           </div>
         ))}
       </div>

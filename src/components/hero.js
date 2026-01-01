@@ -9,119 +9,70 @@ export default function Hero() {
   const slide = heroSlides[active];
 
   return (
-    <section className="bg-white overflow-hidden">
-
-      {/* ========================= */}
-      {/* MOBILE + iPAD (IMAGE + GRADIENT TEXT) */}
-      {/* ========================= */}
+    <section className="bg-white overflow-hidden pt-1 md:pt-2 xl:pt-4">
+      {/* ================= MOBILE + iPAD ================= */}
       <div className="xl:hidden">
-        <div className="
-          relative
-          h-[520px]
-          md:h-[620px]
-          lg:h-[770px]
-          xl:hidden
-          w-full
-          overflow-hidden
-        ">
-          {/* IMAGE */}
-          <HeroCarousel onChange={setActive} variant="card" />
-
-          {/* STRONG BOTTOM GRADIENT */}
+        <div className="relative min-h-[440px] md:min-h-[520px] w-full">
+          <HeroCarousel onChange={setActive} />
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent" />
-
-          {/* TEXT CONTENT */}
           <div className="absolute bottom-0 left-0 right-0 px-5 pb-6 text-white">
-            <h1 className="text-4xl font-light leading-tight text-white sm:text-5xl lg:text-6xl">
+            <p className="leading-tight">
               {slide.titleParts.map((part, i) => (
                 <span
                   key={i}
-                  className={`
-        block
-        ${part.highlight ? "font-semibold text-[#E5635B]" : ""}
-      `}
+                  className={`block font-light ${
+                    part.highlight
+                      ? "text-[48px] font-semibold text-[#EE656C]"
+                      : "text-[36px] text-white" // Fixed mobile color to white for visibility
+                  }`}
                 >
                   {part.text}
                 </span>
               ))}
-            </h1>
-
-
-            <p className="mt-2 text-sm text-white/90 leading-relaxed max-w-[90%]">
+            </p>
+            <p className="mt-2 text-sm text-white/90 max-w-[100%]">
               {slide.description}
             </p>
+            <div className="mt-8 flex gap-4">
+                <button className="h-[51px] w-[192px] rounded-full bg-[rgba(235,81,88,0.86)] text-sm font-medium text-white">
+                  {slide.ctaPrimary}
+                </button>
 
-            <div className="mt-5 flex items-center gap-3 flex-wrap">
-              {/* PRIMARY CTA */}
-              <button
-                className="
-                  inline-flex items-center justify-center gap-2
-                  rounded-full
-                  bg-[rgba(235,81,88,0.86)]
-                  px-5 py-3
-                  text-sm font-medium text-white
-                  shadow-lg
-                  hover:bg-[rgba(235,81,88,1)]
-                  transition
-                  whitespace-nowrap
-                "
-              >
-                {slide.ctaPrimary}
-              </button>
-
-              {/* SECONDARY CTA */}
-              <button
-                className="
-                  inline-flex items-center justify-center
-                  rounded-full
-                  bg-white
-                  px-5 py-3
-                  text-sm font-medium text-[#2F2F2F]
-                  shadow
-                  hover:bg-gray-100
-                  transition
-                  whitespace-nowrap
-                "
-              >
-                {slide.ctaSecondary}
-              </button>
-            </div>
+                <button className="h-[51px] w-[192px] rounded-full border border-[#E5E5E5] text-sm font-medium text-[#FFFFFF] flex items-center justify-center gap-3">
+                  {slide.ctaSecondary}
+                  <span className="flex h-6 w-6 items-center justify-center rounded-full border border-[#E5635B] text-[#E5635B] text-xs">
+                    ▶
+                  </span>
+                </button>
+              </div>
           </div>
         </div>
       </div>
 
-
-      {/* ========================= */}
-      {/* DESKTOP (CONSTRAINED SPLIT HERO) */}
-      {/* ========================= */}
+      {/* ================= DESKTOP ================= */}
       <div className="hidden xl:block">
         <div className="mx-auto max-w-7xl px-4 md:px-6">
-          <div className="grid grid-cols-2 gap-10 lg:min-h-[80vh]">
-
-            {/* LEFT CONTENT */}
-            <div
-              key={active}
-              className="flex flex-col justify-center max-w-[520px] py-14 transition-all duration-500"
-            >
-              <h1 className="text-4xl font-light leading-tight text-white sm:text-5xl lg:text-6xl">
+          <div className="grid grid-cols-2 gap-10 min-h-[52vh]">
+            {/* LEFT */}
+            <div className="flex flex-col justify-center max-w-[520px] xl:-mt-6">
+              <h1 className="leading-tight">
                 {slide.titleParts.map((part, i) => (
                   <span
                     key={i}
-                    className={`
-        block
-        ${part.highlight ? "font-semibold text-[#E5635B]" : "font-semibold text-[#2F2F2F]"}
-      `}
+                    className={`block font-semibold ${
+                      part.highlight
+                        ? "text-6xl text-[#E5635B]" // LARGER SIZE for highlight
+                        : "text-4xl text-[#2F2F2F]" // SMALLER SIZE for normal
+                    }`}
                   >
                     {part.text}
                   </span>
                 ))}
               </h1>
 
-
-              <p className="mt-6 max-w-md text-base text-gray-600">
+              <p className="mt-5 max-w-md text-base text-gray-600">
                 {slide.description}
               </p>
-
               <div className="mt-8 flex gap-4">
                 <button className="h-[51px] w-[192px] rounded-full bg-[rgba(235,81,88,0.86)] text-sm font-medium text-white">
                   {slide.ctaPrimary}
@@ -136,15 +87,13 @@ export default function Hero() {
               </div>
             </div>
 
-            {/* RIGHT IMAGE */}
-            <div className="flex items-end justify-center">
+            {/* RIGHT */}
+            <div className="flex items-end justify-center xl:-mt-4">
               <HeroCarousel onChange={setActive} />
             </div>
-
           </div>
         </div>
       </div>
-
     </section>
   );
 }

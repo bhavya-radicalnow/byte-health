@@ -1,6 +1,6 @@
 export default function PlansSection() {
   return (
-    <section className="bg-white py-24">
+    <section className="bg-white py-24" id="health-plans">
       <div className="mx-auto max-w-7xl px-4 md:px-6">
 
         {/* HEADER */}
@@ -44,9 +44,9 @@ export default function PlansSection() {
             </ul>
 
             <div className="mt-10 text-center">
-              <p className="text-lg font-medium text-[#2F2F2F]">
+              {/* <p className="text-lg font-medium text-[#2F2F2F]">
                 Rs 599/month
-              </p>
+              </p> */}
 
               <button className="mt-6 w-full rounded-full bg-[#4A1E3F] py-3 text-sm font-medium text-white hover:opacity-90">
                 Select Plan
@@ -81,9 +81,9 @@ export default function PlansSection() {
             </ul>
 
             <div className="mt-10 text-center">
-              <p className="text-lg font-medium text-[#2F2F2F]">
+              {/* <p className="text-lg font-medium text-[#2F2F2F]">
                 Rs 899/month
-              </p>
+              </p> */}
 
               <button className="mt-6 w-full rounded-full bg-[#4A1E3F] py-3 text-sm font-medium text-white hover:opacity-90">
                 Select Plan

@@ -20,7 +20,7 @@ const clinics = [
 
 export default function ClinicLocationsSection() {
   return (
-    <section className="bg-[#FFF7F6] py-24">
+    <section className="bg-[#FFF7F6] py-24" id="clinic-locations">
       <div className="mx-auto max-w-7xl px-4 md:px-6">
 
         {/* HEADER */}

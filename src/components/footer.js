@@ -63,16 +63,16 @@ export default function Footer() {
                 Healthcare for All.
               </p>
 
-              <div className="mt-8 flex flex-wrap gap-4 text-sm text-[#9CA3AF] underline decoration-gray-600 underline-offset-4">
+              {/* <div className="mt-8 flex flex-wrap gap-4 text-sm text-[#9CA3AF] underline decoration-gray-600 underline-offset-4">
                 <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
                 <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
                 <a href="#" className="hover:text-white transition-colors">Cookie Policy</a>
-              </div>
+              </div> */}
             </div>
 
             <div className="mt-8 lg:mt-auto">
               <p className="text-sm text-[#6B7280]">
-                © 2025 Byte Health. All rights reserved.
+                © 2025 Byte Swasth Health Technologies Private Limited. All rights reserved. | CIN U86909MH2025PTC445047.
               </p>
             </div>
           </div>
@@ -81,7 +81,7 @@ export default function Footer() {
           <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-3 gap-8">
             
             {/* COMPANY */}
-            <div>
+            {/* <div>
               <h4 className="mb-6 text-lg font-bold text-white">Company</h4>
               <ul className="space-y-4">
                 {['About Us', 'Our Mission', 'Careers', 'Press'].map((item) => (
@@ -91,10 +91,10 @@ export default function Footer() {
                   </li>
                 ))}
               </ul>
-            </div>
+            </div> */}
 
             {/* SERVICES */}
-            <div>
+            {/* <div>
               <h4 className="mb-6 text-lg font-bold text-white">Services</h4>
               <ul className="space-y-4">
                 {['General Consultation', 'Health Screenings', 'Insurance Plans', 'Corporate Wellness'].map((item) => (
@@ -104,10 +104,10 @@ export default function Footer() {
                   </li>
                 ))}
               </ul>
-            </div>
+            </div> */}
 
             {/* SUPPORT */}
-            <div>
+            {/* <div>
               <h4 className="mb-6 text-lg font-bold text-white">Support</h4>
               <ul className="space-y-4">
                 {['Contact Us', 'FAQs', 'Book Appointment', 'Emergency'].map((item) => (
@@ -117,7 +117,7 @@ export default function Footer() {
                   </li>
                 ))}
               </ul>
-            </div>
+            </div> */}
 
           </div>
         </div>

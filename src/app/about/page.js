@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { CheckCircle2 } from 'lucide-react';
 import Navbar from '@/components/navbar';
 import Footer from '@/components/footer';
@@ -11,27 +12,40 @@ const AboutPage = () => {
       <div className="min-h-screen font-sans text-slate-900">
 
         {/* 1. Hero Section */}
-        <section className="relative overflow-hidden px-6 pt-10 md:pt-16 lg:px-20 lg:pt-0">
-          {/* lg:pt-0 allows the image to define the height on desktop */}
+        <section className="relative lg:left-10 overflow-hidden px-6 pt-10 md:pt-16 lg:px-20 lg:pt-0">
           <div className="mx-auto max-w-7xl">
             <div className="grid items-center gap-10 lg:grid-cols-2 lg:min-h-[550px]">
-              {/* lg:min-h ensures the section has enough height for the big image */}
-
-              {/* TEXT SIDE: Stays centered because of 'items-center' */}
+              
+              {/* TEXT SIDE */}
               <div className="z-10 py-12 text-center lg:text-left">
-                <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-slate-500 md:text-sm">About Byte Health</p>
+                
+                {/* Breadcrumb */}
+                <nav className="mb-6 flex items-center justify-center gap-2 text-sm lg:justify-start">
+                  <Link 
+                    href="/" 
+                    className="font-medium text-slate-500 transition-colors hover:text-rose-500"
+                  >
+                    Home
+                  </Link>
+                  <span className="text-slate-400">/</span>
+                  <span className="font-bold text-[#4A1E3F]">About Us</span>
+                </nav>
+
+                <p className="mb-4 text-xs font-bold uppercase tracking-widest text-slate-500 md:text-sm">
+                  About Byte Health
+                </p>
                 <h1 className="text-3xl font-bold leading-tight sm:text-4xl md:text-5xl">
-                  We <span className="text-rose-500">build accessible, coordinated and compassionate health systems</span> for communities
+                  We <span className="text-[#EB5158]">build accessible, coordinated and compassionate health systems</span> for communities
                 </h1>
                 <p className="mt-6 text-base text-slate-600 md:text-lg lg:max-w-xl">
                   Partnering with employers, clinics, and communities to make quality healthcare simpler, affordable, and closer to home.
                 </p>
-                <button className="mt-8 w-full rounded-full bg-rose-500 px-8 py-4 text-white transition-all hover:bg-rose-600 hover:shadow-lg active:scale-95 sm:w-auto">
+                <button className="mt-8 w-full rounded-full bg-[#EB5158] px-8 py-4 text-white transition-all hover:bg-rose-600 hover:shadow-lg active:scale-95 sm:w-auto">
                   Book a Consultation →
                 </button>
               </div>
 
-              {/* IMAGE SIDE: Big and sticking to bottom */}
+              {/* IMAGE SIDE */}
               <div className="relative flex justify-center lg:h-full lg:items-end lg:justify-end">
                 <div className="relative h-[350px] w-[320px] sm:h-[450px] sm:w-[400px] md:h-[550px] md:w-[500px] lg:h-[600px] lg:w-[550px]">
                   <Image
@@ -48,7 +62,7 @@ const AboutPage = () => {
         </section>
 
         {/* 2. Our Mission Section */}
-        <section className="bg-[#43234F] px-6 pt-16 text-white md:pt-20 lg:px-20 lg:pt-24">
+        <section className="bg-[#43234F] left-10 px-6 pt-16 text-white md:pt-20 lg:px-20 lg:pt-24">
           <div className="mx-auto max-w-7xl">
             <div className="grid items-end gap-12 lg:grid-cols-2">
               <div className="order-2 flex justify-center lg:order-1">
@@ -66,7 +80,6 @@ const AboutPage = () => {
                 <p className="mb-2 text-sm font-medium text-rose-300">Our Mission</p>
                 <h2 className="text-3xl font-bold md:text-4xl lg:text-5xl">Strengthening the Health Care Systems</h2>
                 <div className="mt-6 space-y-4 text-sm leading-relaxed text-slate-200 md:text-base">
-                  {/* FIXED LINE BELOW: Health's became Health&apos;s */}
                   <p>Byte Health&apos;s mission is to strengthen communities by helping build health systems that are accessible, coordinated, and compassionate.</p>
                   <p>We partner with organizations that share our commitment to improving care delivery and ensuring that every person can live a healthier, more supported life.</p>
                   <p>Byte Health strengthens communities by building accessible, coordinated, and compassionate health systems.</p>
@@ -77,12 +90,12 @@ const AboutPage = () => {
         </section>
 
         {/* 3. Our Vision Section */}
-        <section className="px-6 py-16 md:py-20 lg:px-20">
+        <section className="px-6 left-10 py-16 md:py-20 lg:px-20">
           <div className="mx-auto max-w-7xl">
             <div className="grid items-center gap-12 lg:grid-cols-2">
               <div>
                 <p className="mb-2 text-sm font-medium text-rose-500">Our Vision</p>
-                <h2 className="text-3xl font-bold md:text-4xl">Healthcare for <span className="text-rose-500">Everyone</span></h2>
+                <h2 className="text-3xl font-bold md:text-4xl">Healthcare for <span className="text-[#EB5158]">Everyone</span></h2>
                 <p className="mt-6 text-slate-600">
                   Our vision is a future where communities thrive because healthcare is inclusive, equitable, and centered around people.
                 </p>
@@ -98,7 +111,7 @@ const AboutPage = () => {
         </section>
 
         {/* 4. Value Pillars (Checklist) */}
-        <section className="bg-slate-50 px-6 py-16 md:py-20 lg:px-20">
+        <section className="bg-slate-50 left-10 px-6 py-16 md:py-20 lg:px-20">
           <div className="mx-auto max-w-7xl">
             <div className="grid items-center gap-12 lg:grid-cols-2">
               <div className="relative h-[250px] w-full overflow-hidden rounded-3xl sm:h-[350px] md:h-[400px]">
@@ -106,7 +119,7 @@ const AboutPage = () => {
               </div>
               <div>
                 <p className="mb-2 text-sm font-medium text-rose-500">Value Pillars</p>
-                <h2 className="text-3xl font-bold md:text-4xl">Building <span className="text-rose-500">Stronger Healthcare</span> Systems</h2>
+                <h2 className="text-3xl font-bold md:text-4xl">Building <span className="text-[#EB5158]">Stronger Healthcare</span> Systems</h2>
                 <p className="mt-4 text-slate-600">Byte Health partners across sectors to design and scale coordinated, affordable health systems that help communities thrive.</p>
                 <ul className="mt-8 space-y-4">
                   {[
@@ -115,7 +128,7 @@ const AboutPage = () => {
                     "Collaborating with governments, insurers, and care providers."
                   ].map((item, idx) => (
                     <li key={idx} className="flex items-start gap-3 font-medium text-slate-700">
-                      <CheckCircle2 className="mt-1 flex-shrink-0 text-rose-500" size={20} />
+                      <CheckCircle2 className="mt-1 flex-shrink-0 text-[#EB5158]" size={20} />
                       <span className="text-sm md:text-base">{item}</span>
                     </li>
                   ))}
@@ -126,11 +139,11 @@ const AboutPage = () => {
         </section>
 
         {/* 5. Our Story */}
-        <section className="px-6 py-16 md:py-20 lg:px-20">
+        <section className="px-6 left-10 py-16 md:py-20 lg:px-20">
           <div className="mx-auto max-w-7xl">
             <div className="mb-10 text-center lg:text-left">
               <p className="text-sm font-medium text-rose-500">Our Story</p>
-              <h2 className="text-3xl font-bold md:text-4xl">Building <span className="text-rose-500">Stronger Healthcare</span> Systems</h2>
+              <h2 className="text-3xl font-bold md:text-4xl">Building <span className="text-[#EB5158]">Stronger Healthcare</span> Systems</h2>
             </div>
             <div className="grid gap-10 lg:grid-cols-2">
               <div className="relative h-[250px] overflow-hidden rounded-3xl shadow-lg sm:h-[350px]">
@@ -145,22 +158,66 @@ const AboutPage = () => {
           </div>
         </section>
 
-        {/* 6. Meet Our Team */}
-        <section className="bg-rose-50/40 px-6 py-16 md:py-20 lg:px-20">
-          <div className="mx-auto max-w-7xl">
-            <div className="mb-12 text-center md:mb-16">
-              <h2 className="text-3xl font-bold text-rose-500 md:text-4xl">Meet Our Team</h2>
-              <p className="mx-auto mt-4 max-w-2xl text-slate-600">We work at the intersection of public health, systems design, and implementation support.</p>
+        {/* 6. Meet Our Team (Updated to match Screenshot) */}
+        <section className="bg-[#FFF9F5] px-6 py-16 md:py-24 lg:px-20">
+          <div className="mx-auto max-w-[1400px]">
+            
+            {/* Header: Title Left, Text Right */}
+            <div className="mb-16 flex flex-col justify-between gap-8 md:flex-row md:items-end">
+              <h2 className="text-4xl font-bold text-[#EB5158] md:text-5xl">
+                Meet Our Team
+              </h2>
+              <p className="max-w-lg text-lg text-slate-700 md:text-right">
+                We work at the intersection of public health and systems design to improve access, coordination, and quality of care.
+              </p>
             </div>
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
-              {[1, 2, 3].map((member) => (
-                <div key={member} className="overflow-hidden rounded-2xl bg-white p-4 shadow-sm transition-transform hover:-translate-y-1">
-                  <div className="relative mb-6 h-64 w-full overflow-hidden rounded-xl bg-rose-100 sm:h-72">
-                    <Image src={`/team-1.png`} alt="Team Member" fill className="object-cover" />
+
+            {/* Team Grid - 5 Columns */}
+            <div className="grid grid-cols-2 gap-x-4 gap-y-10 md:grid-cols-3 lg:grid-cols-5 lg:gap-6">
+              {[
+                { 
+                  name: "Santosh", 
+                  role: "Chief Executive Officer & CoFounder", 
+                  image: "/santosh.png" 
+                },
+                { 
+                  name: "Abhiroop", 
+                  role: "Chief Business Officer & CoFounder", 
+                  image: "/abhiroop.png" 
+                },
+                { 
+                  name: "Vivek", 
+                  role: "Chief of Institutional Business & CoFounder", 
+                  image: "/vivek.png" 
+                },
+                { 
+                  name: "Sounak", 
+                  role: "Chief of Product, Technology & CoFounder", 
+                  image: "/sounak.png" 
+                },
+                { 
+                  name: "Navin", 
+                  role: "Chief Risk Officer & CoFounder", 
+                  image: "/navin.png" 
+                },
+              ].map((member) => (
+                <div key={member.name} className="flex flex-col group">
+                  {/* Peach Card Background */}
+                  <div className="relative h-[220px] w-full overflow-hidden rounded-2xl bg-[#FFD4A6] transition-transform duration-300 group-hover:-translate-y-1 sm:h-[260px] md:h-[300px]">
+                    <Image 
+                      src={member.image} 
+                      alt={member.name} 
+                      fill 
+                      className="object-cover object-top" 
+                    />
                   </div>
-                  <div className="pb-2 text-center">
-                    <h3 className="text-lg font-bold text-slate-900">Rajesh Sharma</h3>
-                    <p className="text-sm font-medium text-slate-400">CEO</p>
+                  
+                  {/* Name & Role Below Card */}
+                  <div className="mt-5">
+                    <h3 className="text-xl font-bold text-slate-900">{member.name}</h3>
+                    <p className="mt-1 text-xs font-bold leading-relaxed text-slate-500 uppercase tracking-wide">
+                      {member.role}
+                    </p>
                   </div>
                 </div>
               ))}
@@ -171,13 +228,13 @@ const AboutPage = () => {
         {/* 7. Bottom Gallery */}
         <section className="px-6 py-16 md:py-20 lg:px-20">
           <div className="mx-auto max-w-7xl text-center">
-            <h2 className="text-3xl font-bold md:text-4xl">Building <span className="text-rose-500">Stronger Healthcare</span> Systems</h2>
+            <h2 className="text-3xl font-bold md:text-4xl">Building <span className="text-[#EB5158]">Stronger Healthcare</span> Systems</h2>
             <p className="mx-auto mt-4 max-w-3xl text-sm text-slate-600 md:text-base">We work at the intersection of public health, systems design, and implementation support.</p>
 
             <div className="mt-12 grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-4">
               {[1, 2, 3, 4].map((i) => (
                 <div key={i} className="relative h-32 overflow-hidden rounded-xl shadow-sm sm:h-48 lg:h-64">
-                  <Image src={`/gallery-1.png`} alt="Gallery" fill className="object-cover" />
+                  <Image src={`/gallery-${i}.png`} alt="Gallery" fill className="object-cover" />
                 </div>
               ))}
             </div>
