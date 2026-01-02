@@ -8,7 +8,7 @@ import { heroSlides } from "./heroSlides";
 
 export function HeroCarousel({ onChange }) {
   const [emblaRef, emblaApi] = useEmblaCarousel(
-    { loop: true, duration: 30 },
+    { loop: true, duration: 20 },
     [Fade()]
   );
 
@@ -24,20 +24,26 @@ export function HeroCarousel({ onChange }) {
   }, [emblaApi, onChange]);
 
   return (
-    <div ref={emblaRef} className="overflow-hidden w-full h-full">
+    // REMOVED max-w-[1220px] here. Let the parent control the width.
+    <div ref={emblaRef} className="overflow-hidden w-full h-full select-none">
       <div className="flex h-full">
         {heroSlides.map((slide, i) => (
           <div
             key={i}
-            className="relative flex-[0_0_100%] flex items-end justify-center"
+            className="relative flex-[0_0_100%] h-full flex items-end justify-center"
           >
-            <div className="relative h-[360px] w-[320px] md:h-[480px] md:w-[420px] lg:h-[560px] lg:w-[520px]">
+            {/* FLUID DIMENSIONS:
+               Instead of w-[320px], we use w-full h-full.
+               This adapts to the 'aspect-ratio' on mobile and 'min-h' on desktop.
+            */}
+            <div className="relative w-full h-full">
               <Image
                 src={slide.image}
-                alt={slide.highlight}
+                alt={slide.highlight || "Hero Image"}
                 fill
                 priority={i === 0}
                 className="object-contain object-bottom"
+                sizes="(max-width: 768px) 100vw, 50vw"
               />
             </div>
           </div>

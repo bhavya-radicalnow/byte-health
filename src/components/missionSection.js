@@ -6,39 +6,39 @@ import { useEffect, useRef } from "react";
 const cards = [
   {
     title: "Accessibility Gap",
-    desc: "Quality healthcare facilities are often far from underserved communities, making regular care a challenge.",
+    desc: "Too many communities lack nearby, reliable healthcare.",
     innerTitle: "Local Clinics",
-    innerDesc: "We bring healthcare to your doorstep with neighbourhood clinics in Bhiwandi and Vasai.",
+    innerDesc: "Neighborhood clinics that bring care closer to home.",
     color: "bg-[#4A1E3F]",
     parentColor: "bg-[#EEE3EB]",
-    direction: { x: 0, y: -40 },
+    direction: { x: 0, y: -30 },
   },
   {
     title: "Affordability Crisis",
-    desc: "Rising healthcare costs push families into debt, making them choose between health and daily necessities.",
-    innerTitle: "Subscription Model",
-    innerDesc: "Low-cost, all-inclusive monthly plans that cover everything from checkups to specialists.",
+    desc: "Rising costs force families to choose between health and daily needs.",
+    innerTitle: "Membership",
+    innerDesc: "Simple, low-cost plans that make quality care affordable.",
     color: "bg-[#E05C5C]",
     parentColor: "bg-[#FFE7E9]",
-    direction: { x: 40, y: 0 },
+    direction: { x: 30, y: 0 },
   },
   {
     title: "Poor Service Quality",
-    desc: "Long wait times, impersonal care, and fragmented health records make healthcare frustrating.",
+    desc: "Long waits & fragmented services break trust in the system.",
     innerTitle: "Care Team",
-    innerDesc: "Personal health coordinators, digital records, and priority appointments.",
+    innerDesc: "Dedicated care teams, and priority access.",
     color: "bg-[#E05C5C]",
     parentColor: "bg-[#FFE7E9]",
-    direction: { x: -40, y: 0 },
+    direction: { x: -30, y: 0 },
   },
   {
     title: "Health Ignorance",
-    desc: "Lack of awareness about preventive care leads to late diagnoses and preventable complications.",
+    desc: "Lack of awareness leads to preventable illness.",
     innerTitle: "Outreach Programs",
-    innerDesc: "Regular health camps, screenings, and education sessions at workplaces.",
+    innerDesc: "Community outreach, and education—at your doorstep.",
     color: "bg-[#4A1E3F]",
     parentColor: "bg-[#EEE3EB]",
-    direction: { x: 0, y: 40 },
+    direction: { x: 0, y: 30 },
   },
 ];
 
@@ -46,6 +46,7 @@ export default function MissionSection() {
   const sectionRef = useRef(null);
 
   useEffect(() => {
+    // Only animate on Desktop (xl and above)
     if (window.innerWidth < 1280) return;
 
     const section = sectionRef.current;
@@ -53,10 +54,10 @@ export default function MissionSection() {
 
     const handleScroll = () => {
       if (!section) return;
-
       const rect = section.getBoundingClientRect();
       const viewportHeight = window.innerHeight;
 
+      // Animate when section is in view
       if (rect.top < viewportHeight && rect.bottom > 0) {
         const scrollProgress = (viewportHeight - rect.top) / (viewportHeight + rect.height);
         const shift = scrollProgress - 0.5;
@@ -75,86 +76,80 @@ export default function MissionSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative bg-white overflow-hidden">
-      <div className="relative z-10 py-20">
-        {/* ADDED: xl:pl-40 
-            This pushes the content right on big screens to make room for the doctor image 
-            without overlap. 
-        */}
-        <div className="mx-auto max-w-7xl px-4 md:px-6 xl:pl-10 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-
-            {/* LEFT TEXT */}
-            <div className="max-w-lg lg:sticky lg:top-10 h-fit">
-              <p className="text-sm font-medium text-[#E5635B]">
+    <section ref={sectionRef} className="bg-white overflow-hidden pt-16 lg:pt-24 pb-16 lg:pb-0">
+      <div className="mx-auto max-w-[1220px] px-4 md:px-8">
+        
+        {/* Main Grid Layout: Left (Title+Doctor) | Right (Text+Cards) */}
+        <div className="grid grid-cols-1 lg:grid-cols-[0.8fr_1.2fr] gap-12 lg:gap-16 items-start">
+          
+          {/* ================= LEFT COLUMN ================= */}
+          <div className="flex flex-col h-full relative">
+            {/* Header Content */}
+            <div className="relative z-10">
+              <p className="text-sm font-bold uppercase tracking-wide text-[#E5635B]">
                 Our Mission
               </p>
-              <h2 className="mt-2 text-4xl font-semibold text-[#4A1E3F] lg:text-5xl lg:leading-tight">
+              <h2 className="mt-3 text-4xl font-bold text-[#4A1E3F] lg:text-6xl lg:leading-[1.1] tracking-tight">
                 Bridging the <br /> Healthcare Gap
               </h2>
             </div>
 
-            {/* RIGHT CARDS */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-12">
+            {/* Doctor Image - Sits at bottom of left column on Desktop */}
+            {/* Hidden on mobile, Visible on lg+ */}
+            <div className="hidden lg:block mt-auto relative w-full h-[550px] -ml-8 xl:-ml-4">
+              <Image
+                src="/mission-doctor.webp"
+                alt="Doctor"
+                fill
+                className="object-contain object-bottom scale-x-[-1]"
+                priority
+              />
+            </div>
+          </div>
+
+          {/* ================= RIGHT COLUMN ================= */}
+          <div className="flex flex-col">
+            
+            {/* Description Text (Moved to Right Column per design) */}
+            <p className="text-lg font-medium text-gray-800 leading-relaxed mb-10 max-w-lg">
+              At Byte Health, we strengthen communities by building health systems that are <span className="font-bold">accessible, coordinated,</span> and <span className="font-bold">compassionate.</span>
+            </p>
+
+            {/* Cards Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
               {cards.map((card, i) => (
                 <div
                   key={i}
-                  className={`relative rounded-2xl ${card.parentColor} p-6 shadow-sm`}
+                  className={`relative rounded-2xl ${card.parentColor} p-6 shadow-sm min-h-[240px] flex flex-col`}
                 >
-                  <h3 className="text-sm font-semibold text-[#2F2F2F]">
+                  <h3 className="text-lg font-bold text-[#2F2F2F] mb-1">
                     {card.title}
                   </h3>
-                  <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+                  <p className="text-sm text-gray-700 leading-relaxed">
                     {card.desc}
                   </p>
 
+                  {/* Animated Inner Card */}
                   <div
                     data-float-card
                     className={`
-                      mt-6 rounded-xl p-5 text-white
+                      mt-auto w-[90%] self-end rounded-xl p-5 text-white shadow-lg
+                      ${card.color}
                       transition-transform duration-75 ease-out
                       translate-x-4 -translate-y-2
-                      xl:translate-x-8 xl:-translate-y-4
-                      ${card.color}
-                      shadow-xl
                     `}
                   >
-                    <h4 className="text-sm font-semibold">
-                      {card.innerTitle}
-                    </h4>
-                    <p className="mt-2 text-xs opacity-90">
+                    <h4 className="text-base font-bold">{card.innerTitle}</h4>
+                    <p className="mt-1 text-xs opacity-90 leading-snug">
                       {card.innerDesc}
                     </p>
                   </div>
                 </div>
               ))}
             </div>
-
           </div>
-        </div>
-      </div>
 
-      {/* DESKTOP + iPAD PRO IMAGE 
-          - z-0: Puts it behind the text/cards
-          - hidden lg:block: Only shows on iPad Pro (1024px) and up
-          - lg:opacity-20: On iPad Pro, it's a watermark behind text (no clash)
-          - xl:opacity-100: On Desktop, it's fully visible (content is pushed right by pl-40)
-      */}
-      <div className="pointer-events-none absolute bottom-0 left-10 z-0 hidden lg:block">
-        <Image
-          src="/mission-doctor.webp"
-          alt="Doctor"
-          width={500}
-          height={500}
-          className="
-            h-[50vh] xl:h-[65vh] 
-            w-auto object-contain 
-            scale-x-[-1] object-bottom
-            opacity-20 xl:opacity-100
-            transition-opacity duration-300
-          "
-          priority
-        />
+        </div>
       </div>
     </section>
   );

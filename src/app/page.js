@@ -17,9 +17,9 @@ export default function Home() {
       <OurStorySection />
       <MissionSection />
       <ServicesSection />
-      <WallOfImpactSection />
+      {/* <WallOfImpactSection /> */}
       <ClinicLocationsSection />
-      <StoriesOfHopeSection />
+      {/* <StoriesOfHopeSection /> */}
       <PlansSection />
       <Footer />
     </>

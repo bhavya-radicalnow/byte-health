@@ -1,10 +1,10 @@
 import Image from "next/image";
 
 const points = [
-  "Hear from employers who partnered with us",
-  "See our clinics and services in action",
-  "Understand our subscription-based model",
-  "Meet the team behind Byte Health",
+  "Platform-led model with clinics acting as local care hubs",
+  "Electronic health records across physicians and specialists",
+  "Preventive-first approach with outreach and care delivery",
+  "Integrated diagnostics, pharmacy, and broker-facilitated insurance coverage",
 ];
 
 export default function OurStorySection() {
@@ -33,14 +33,12 @@ export default function OurStorySection() {
 
             <h2 className="text-3xl font-bold leading-tight sm:text-4xl">
               See How We Are{" "}
-              <span className="block text-[#EB5158]">Changing Lives</span>
+              <span className="block text-[#EB5158]">Scaling a Hyperlocal Health Platform</span>
             </h2>
             
             {/* FIXED LINE BELOW: we're became we&apos;re */}
             <p className="mt-5 max-w-md text-base text-white/80 leading-relaxed">
-              Watch our explainer video to understand how we&apos;re making
-              quality healthcare accessible and affordable for every worker
-              and their family.
+              Byte Health is a hyperlocal, comprehensive health solution platform serving underserved communities in India. We combine a strong digital layer with a network of affordable clinics with high-quality care.
             </p>
 
             <ul className="mt-8 space-y-4">
