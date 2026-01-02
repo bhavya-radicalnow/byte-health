@@ -115,7 +115,7 @@ const AboutPage = () => {
               <div className="order-1 lg:order-2">
                 <p className="mb-2 text-sm font-bold text-[#EB5158] tracking-wide">Value Pillars</p>
                 <h2 className="text-3xl font-bold text-[#4A1E3F] md:text-4xl"><span className="text-[#EB5158]">Strengthening</span> The <br/> <span className="text-[#EB5158]">Health Care</span> Systems</h2>
-                <p className="mt-4 text-slate-600">Byte Health's mission is to strengthen communities by building healthcare systems that are accessible, coordinated, and compassionate.</p>
+                <p className="mt-4 text-slate-600">Byte Health&apos; mission is to strengthen communities by building healthcare systems that are accessible, coordinated, and compassionate.</p>
                 <p className="mt-5 text-slate-600 leading-relaxed">
                   We partner with employers, clinics, and community organisations to improve care delivery—ensuring people can navigate healthcare more easily and live healthier, more supported lives.
                 </p>
@@ -140,7 +140,7 @@ const AboutPage = () => {
                   A few friends—each from different corners of finance and insurance—had come together with a shared discomfort. They had built careers around managing risk and value, yet kept seeing the same truth: for too many people, healthcare arrived late, fragmented, or not at all.
                 </p> 
                 <p className="mt-5 text-slate-600 leading-relaxed">
-                  As dawn broke in a small Kolkata apartment, one idea became clear—healthcare doesn't need to be overwhelming. It needs to arrive in small, meaningful moments. A consultation. A test. A follow-up. A byte at a time.
+                  As dawn broke in a small Kolkata apartment, one idea became clear—healthcare doesn&apos;t need to be overwhelming. It needs to arrive in small, meaningful moments. A consultation. A test. A follow-up. A byte at a time.
                 </p> 
                 <p className="mt-5 text-slate-600 leading-relaxed">
                   That word stayed.
