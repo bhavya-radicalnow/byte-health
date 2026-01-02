@@ -79,13 +79,11 @@ export default function MissionSection() {
     <section ref={sectionRef} className="bg-white overflow-hidden pt-16 lg:pt-24 pb-16 lg:pb-0">
       <div className="mx-auto max-w-[1220px] px-4 md:px-8">
         
-        {/* Main Grid Layout: Left (Title+Doctor) | Right (Text+Cards) */}
-        <div className="grid grid-cols-1 lg:grid-cols-[0.8fr_1.2fr] gap-12 lg:gap-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
           
           {/* ================= LEFT COLUMN ================= */}
-          <div className="flex flex-col h-full relative">
-            {/* Header Content */}
-            <div className="relative z-10">
+          <div className="flex flex-col h-full relative z-10">
+            <div>
               <p className="text-sm font-bold uppercase tracking-wide text-[#E5635B]">
                 Our Mission
               </p>
@@ -94,8 +92,6 @@ export default function MissionSection() {
               </h2>
             </div>
 
-            {/* Doctor Image - Sits at bottom of left column on Desktop */}
-            {/* Hidden on mobile, Visible on lg+ */}
             <div className="hidden lg:block mt-auto relative w-full h-[550px] -ml-8 xl:-ml-4">
               <Image
                 src="/mission-doctor.webp"
@@ -108,36 +104,40 @@ export default function MissionSection() {
           </div>
 
           {/* ================= RIGHT COLUMN ================= */}
-          <div className="flex flex-col">
+          <div className="flex flex-col lg:mt-12 lg:max-w-[540px] lg:ml-auto">
             
-            {/* Description Text (Moved to Right Column per design) */}
-            <p className="text-lg font-medium text-gray-800 leading-relaxed mb-10 max-w-lg">
+            <p className="text-lg font-medium text-gray-800 leading-relaxed mb-10">
               At Byte Health, we strengthen communities by building health systems that are <span className="font-bold">accessible, coordinated,</span> and <span className="font-bold">compassionate.</span>
             </p>
 
             {/* Cards Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8 mb-5">
               {cards.map((card, i) => (
                 <div
                   key={i}
-                  className={`relative rounded-2xl ${card.parentColor} p-6 shadow-sm min-h-[240px] flex flex-col`}
+                  // UPDATED: min-h increased to 340px to prevent overlap with new line-height
+                  className={`relative rounded-2xl ${card.parentColor} p-6 shadow-sm min-h-[250px] flex flex-col justify-between gap-6`}
                 >
-                  <h3 className="text-lg font-bold text-[#2F2F2F] mb-1">
-                    {card.title}
-                  </h3>
-                  <p className="text-sm text-gray-700 leading-relaxed">
-                    {card.desc}
-                  </p>
+                  <div>
+                    <h3 className="text-lg font-semibold text-[#2F2F2F] mb-1">
+                      {card.title}
+                    </h3>
+                    {/* UPDATED: Changed leading-relaxed to leading-loose for more text spacing */}
+                    <p className="text-sm text-gray-700 leading-relaxed">
+                      {card.desc}
+                    </p>
+                  </div>
 
                   {/* Animated Inner Card */}
                   <div
                     data-float-card
                     className={`
-                      mt-auto w-[90%] self-end rounded-xl p-5 text-white shadow-lg
+                      mt-auto w-[100%] self-end rounded-xl p-5 text-white shadow-lg
                       ${card.color}
                       transition-transform duration-75 ease-out
                       translate-x-4 -translate-y-2
                     `}
+                    // UPDATED: Changed w-[90%] to w-[98%] for wider inner card
                   >
                     <h4 className="text-base font-bold">{card.innerTitle}</h4>
                     <p className="mt-1 text-xs opacity-90 leading-snug">

@@ -70,7 +70,7 @@ export default function PlansSection() {
             </ul>
 
             <div className="mt-10 text-center">
-              <button onClick={() => setShowHelpModal(true)} className="w-full rounded-full bg-[#4A1E3F] py-3.5 text-sm font-bold text-white hover:opacity-90 transition-opacity">
+              <button onClick={() => setShowHelpModal(true)} className="w-1/2 rounded-full bg-[#4A1E3F] py-3.5 text-sm font-bold text-white hover:opacity-90 transition-opacity">
                 Contact Us
               </button>
             </div>
@@ -103,7 +103,7 @@ export default function PlansSection() {
             </ul>
 
             <div className="mt-10 text-center">
-              <button onClick={() => setShowHelpModal(true)} className="w-full rounded-full bg-[#4A1E3F] py-3.5 text-sm font-bold text-white hover:opacity-90 transition-opacity">
+              <button onClick={() => setShowHelpModal(true)} className="w-1/2 rounded-full bg-[#4A1E3F] py-3.5 text-sm font-bold text-white hover:opacity-90 transition-opacity">
                 Contact Us
               </button>
             </div>
